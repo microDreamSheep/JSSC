@@ -7,9 +7,11 @@ import java.util.Objects;
 
 public class LexerAnalyzer {
 
+    private File nowFile;
+
     public void analyze(File dictionary) {
         //扫描根目录
-        FileMetaData.rootFile = dictionary;
+        nowFile=FileMetaData.rootFile = dictionary;
         //输出目录
         FileMetaData.outPutFile = new File(dictionary.getAbsolutePath()+File.separator+"../" + File.separator + "outPut");
         //递归调用分析器寻找.java文件
@@ -17,6 +19,7 @@ public class LexerAnalyzer {
     }
     public void findJavaFile(File file) {
         if (file.isDirectory()) {
+            nowFile = file;
             for (File f : Objects.requireNonNull(file.listFiles())) {
                 findJavaFile(f);
             }
@@ -25,6 +28,7 @@ public class LexerAnalyzer {
         if (!file.getName().endsWith(".java")) {
             return;
         }
-
+        //找到.java文件后，调用分析器进行分析
+        GrammarParse.ParseAndOut(JSSCAnalysis.analyzeAJavaFile(file));
     }
 }

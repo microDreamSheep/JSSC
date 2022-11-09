@@ -9,21 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>grammatical</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>live.midreamsheep.jssc</groupId>
-            <artifactId>entity</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>live.midreamsheep.jssc</groupId>
-            <artifactId>entity</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+    <artifactId>functionClasses</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
