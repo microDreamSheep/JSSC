@@ -1,5 +1,11 @@
 package live.midreamsheep.jssc.pojo.taken;
 
-public class Taken {
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
+@AllArgsConstructor
+public class Taken {
+    TakenType type;
+    String value;
 }

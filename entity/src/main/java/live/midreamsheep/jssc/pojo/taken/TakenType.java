@@ -1,6 +1,8 @@
 package live.midreamsheep.jssc.pojo.taken;
 
 public enum TakenType {
+    //数字
+    NUMBER,
     //java 关键字
     KEYWORD,
     //jssc标识符
@@ -17,4 +19,6 @@ public enum TakenType {
     SPECIAL_SYMBOL,
     //空白
     BLANK,
+    //注释
+    COMMENT,
 }
