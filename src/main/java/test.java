@@ -14,7 +14,7 @@ public class test {
         * awdwa
         * asdasd*/
         System.out.println();
-        if ( 5==5){
+        if (5==5){
             return;//的撒大苏打
         }
     }

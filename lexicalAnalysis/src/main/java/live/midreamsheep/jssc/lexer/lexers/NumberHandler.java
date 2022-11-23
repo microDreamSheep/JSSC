@@ -16,8 +16,7 @@ public class NumberHandler implements LexerHandlerInter {
             sb.append((char) bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Taken(TakenType.NUMBER, sb.toString()));
-        System.out.println(sb);
+        takenList.add(new Taken(TakenType.NUMBER, sb.toString(),0));
         return pointer;
     }
 }

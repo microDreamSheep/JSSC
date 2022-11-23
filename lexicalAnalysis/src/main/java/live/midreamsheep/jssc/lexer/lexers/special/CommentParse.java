@@ -2,6 +2,7 @@ package live.midreamsheep.jssc.lexer.lexers.special;
 
 import live.midreamsheep.jssc.pojo.taken.Taken;
 import live.midreamsheep.jssc.pojo.taken.TakenType;
+import live.midreamsheep.jssc.pojo.taken.type.Comment;
 
 import java.util.List;
 
@@ -24,7 +25,9 @@ public class CommentParse {
             sb.append((char)bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Taken(TakenType.COMMENT,sb.toString()));
+        pointer+=2;
+        sb.append("*/");
+        takenList.add(new Taken(TakenType.COMMENT,sb.toString(), Comment.MULTI_OR_DOC_LINE.getType()));
         return pointer;
     }
 
@@ -36,7 +39,7 @@ public class CommentParse {
             sb.append((char)bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Taken(TakenType.COMMENT,sb.toString()));
+        takenList.add(new Taken(TakenType.COMMENT,sb.toString(),Comment.MULTI_OR_DOC_LINE.getType()));
         return pointer;
     }
 }

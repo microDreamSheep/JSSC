@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Taken {
-    TakenType type;
+    TakenType Taken_type;
     String value;
+    int type;
 }
