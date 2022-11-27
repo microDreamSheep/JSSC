@@ -4,22 +4,67 @@ import live.midreamsheep.jssc.pojo.taken.Taken;
 
 public enum Others {
     //换行
-    NEW_LINE(),
+    NEW_LINE(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //空格
-    SPACE(),
+    SPACE(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //制表符
-    TAB(),
+    TAB(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //#{
-    START(),
+    START(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //}
-    END(),
+    END(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //.
-    POINT(),
+    POINT(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //(
-    LEFT_BRACKET(),
+    LEFT_BRACKET(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //)
-    RIGHT_BRACKET(),
+    RIGHT_BRACKET(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    },
     //;
-    SEMICOLON();
+    SEMICOLON(){
+        @Override
+        public Taken getTaken(int pointer, byte[] datas) {
+            return null;
+        }
+    };
     public abstract Taken getTaken(int pointer,byte[] datas);
 }

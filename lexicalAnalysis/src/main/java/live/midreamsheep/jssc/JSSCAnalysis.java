@@ -16,7 +16,6 @@ public class JSSCAnalysis {
         for(int i = 0;i<bytes.length;){
             i = LexerHandOut.getHandler(bytes[i]).handle(bytes,i,takenList);
         }
-        takenList.forEach(a-> System.out.println(a.getValue()));
         return takenList;
     }
 }

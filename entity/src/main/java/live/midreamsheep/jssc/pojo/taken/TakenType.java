@@ -13,7 +13,7 @@ public enum TakenType {
     OPERATOR,
     //界符 ;
     DELIMITER,
-    //左右括号
+    //左右括号()与左右{}与左右[]
     BRACKET,
     //特殊符号 , . 。等
     SPECIAL_SYMBOL,
@@ -21,4 +21,6 @@ public enum TakenType {
     BLANK,
     //注释
     COMMENT,
+    //字符串
+    String
 }
