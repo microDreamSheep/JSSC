@@ -1,6 +1,6 @@
-package live.midreamsheep.jssc.pojo.taken;
+package live.midreamsheep.jssc.pojo.token;
 
-public enum TakenType {
+public enum TokenType {
     //数字
     NUMBER,
     //java 关键字

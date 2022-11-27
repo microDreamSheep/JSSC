@@ -1,13 +1,13 @@
 package live.midreamsheep.jssc.lexer.lexers.special;
 
-import live.midreamsheep.jssc.pojo.taken.Taken;
-import live.midreamsheep.jssc.pojo.taken.TakenType;
-import live.midreamsheep.jssc.pojo.taken.type.Comment;
+import live.midreamsheep.jssc.pojo.token.Token;
+import live.midreamsheep.jssc.pojo.token.TokenType;
+import live.midreamsheep.jssc.pojo.token.type.Comment;
 
 import java.util.List;
 
 public class CommentParse {
-    public static int parse(byte[] bytes, int pointer, List<Taken> takenList) {
+    public static int parse(byte[] bytes, int pointer, List<Token> takenList) {
         switch (bytes[pointer + 1]) {
             case '/':
                 return SingleLineCommentParse(bytes, pointer, takenList);
@@ -17,7 +17,7 @@ public class CommentParse {
         return pointer+1;
     }
 
-    private static int MultiLineCommentParse(byte[] bytes, int pointer, List<Taken> takenList) {
+    private static int MultiLineCommentParse(byte[] bytes, int pointer, List<Token> takenList) {
         pointer+=2;
         StringBuilder sb = new StringBuilder();
         sb.append("/*");
@@ -27,11 +27,11 @@ public class CommentParse {
         }
         pointer+=2;
         sb.append("*/");
-        takenList.add(new Taken(TakenType.COMMENT,sb.toString(), Comment.MULTI_OR_DOC_LINE.getType()));
+        takenList.add(new Token(TokenType.COMMENT,sb.toString(), Comment.MULTI_OR_DOC_LINE.getType()));
         return pointer;
     }
 
-    private static int SingleLineCommentParse(byte[] bytes, int pointer, List<Taken> takenList) {
+    private static int SingleLineCommentParse(byte[] bytes, int pointer, List<Token> takenList) {
         pointer+=2;
         StringBuilder sb = new StringBuilder();
         sb.append("//");
@@ -39,7 +39,7 @@ public class CommentParse {
             sb.append((char)bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Taken(TakenType.COMMENT,sb.toString(),Comment.MULTI_OR_DOC_LINE.getType()));
+        takenList.add(new Token(TokenType.COMMENT,sb.toString(),Comment.MULTI_OR_DOC_LINE.getType()));
         return pointer;
     }
 }

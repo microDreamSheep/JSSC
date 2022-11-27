@@ -1,4 +1,4 @@
-package live.midreamsheep.jssc.pojo.taken.type;
+package live.midreamsheep.jssc.pojo.token.type;
 
 /**
  * 注释类型
