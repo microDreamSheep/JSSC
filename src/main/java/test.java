@@ -13,7 +13,7 @@ public class test {
         * awdwa
         * asdasd*/
         System.out.println();
-        int i = 5;
+        int i = 3/5;
         String a = "asdasd";
         if (i>=5){
             return;//的撒大苏打

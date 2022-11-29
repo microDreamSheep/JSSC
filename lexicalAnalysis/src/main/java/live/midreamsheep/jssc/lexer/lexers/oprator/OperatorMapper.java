@@ -2,14 +2,18 @@ package live.midreamsheep.jssc.lexer.lexers.oprator;
 
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
-import live.midreamsheep.jssc.pojo.token.type.ProcessInter;
+import live.midreamsheep.jssc.lexer.lexers.ProcessInter;
 import live.midreamsheep.jssc.pojo.token.type.operator.OperatorEnum;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author midreamsheep
+ * 运算符映射器
+ * */
 public class OperatorMapper {
-
+    //运算符映射
     public static Map<String, ProcessInter> operatorMap = new HashMap<>();
 
     static {

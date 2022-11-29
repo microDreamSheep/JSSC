@@ -1,5 +1,9 @@
 package live.midreamsheep.jssc.pojo.token;
 
+/**
+ * @author midreamsheep
+ * token类型的枚举
+ * */
 public enum TokenTypeEnum {
     //数字
     NUMBER,

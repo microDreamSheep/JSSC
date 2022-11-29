@@ -1,5 +1,14 @@
 package live.midreamsheep.jssc.pojo.token.type.operator;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * @author midreamsheep
+ * 运算符枚举
+ * */
+@AllArgsConstructor
+@Getter
 public enum OperatorEnum {
     //加
     ADD("+", 0),
@@ -45,16 +54,6 @@ public enum OperatorEnum {
     TERNARY_COLON(":", 20),
     //^
     XOR("^", 21);
-    final String value;
-    final int key;
-    OperatorEnum(String value, int key) {
-        this.value = value;
-        this.key = key;
-    }
-    public String getValue() {
-        return value;
-    }
-    public int getKey() {
-        return key;
-    }
+    private final String value;
+    private final int key;
 }

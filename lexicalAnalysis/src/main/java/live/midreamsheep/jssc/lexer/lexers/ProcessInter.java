@@ -1,4 +1,4 @@
-package live.midreamsheep.jssc.lexer;
+package live.midreamsheep.jssc.lexer.lexers;
 
 import live.midreamsheep.jssc.pojo.token.Token;
 
@@ -6,11 +6,11 @@ import java.util.List;
 
 /**
  * @author midreamsheep
- * 词法分析处理器
+ * 处理器统一接口
  * */
-public interface LexerHandlerInter {
+public interface ProcessInter {
     /**
-     * 处理
+     * 处理器
      * @param bytes 字节流
      * @param pointer 指针
      * @param takenList 词素列表

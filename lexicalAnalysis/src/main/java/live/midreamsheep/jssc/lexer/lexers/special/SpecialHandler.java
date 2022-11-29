@@ -7,6 +7,10 @@ import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
 import java.util.List;
 
+/**
+ * @author midreamsheep
+ * 特殊符处理器
+ * */
 public class SpecialHandler implements LexerHandlerInter {
     @Override
     public int handle(byte[] bytes, int pointer, List<Token> takenList) {
@@ -33,6 +37,7 @@ public class SpecialHandler implements LexerHandlerInter {
         //处理界符
         if (BracketMapper.bracketMap.containsKey(""+currentChar)) {
             takenList.add(new Token(TokenTypeEnum.BRACKET,""+currentChar,BracketMapper.bracketMap.get(""+currentChar)));
+            return ++pointer;
         }
         //处理括号等
         switch (bytes[pointer]) {
@@ -46,15 +51,22 @@ public class SpecialHandler implements LexerHandlerInter {
         takenList.add(new Token(TokenTypeEnum.SPECIAL_SYMBOL,((char)bytes[pointer])+"",-1));
         return ++pointer;
     }
+    /**
+     * 空白符
+     * @param bytes 字节流
+     * @param pointer 指针
+     * @param takenList token组
+     * @return 新指针
+     * */
     private int parseBlank(byte[] bytes, int pointer, List<Token> takenList) {
         StringBuilder sb = new StringBuilder();
-        while (
+        while (pointer<bytes.length&&(
                 bytes[pointer] == ' '
              || bytes[pointer] == '\t'
              || bytes[pointer] == '\n'
              || bytes[pointer] == '\b'
              || bytes[pointer] == '\r'
-        ) {
+        )) {
             sb.append((char) bytes[pointer]);
             pointer++;
         }

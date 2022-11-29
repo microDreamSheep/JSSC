@@ -3,7 +3,8 @@ package live.midreamsheep.jssc.lexer;
 import live.midreamsheep.jssc.lexer.lexers.number.NumberHandler;
 import live.midreamsheep.jssc.lexer.lexers.oprator.OperatorHandler;
 import live.midreamsheep.jssc.lexer.lexers.special.SpecialHandler;
-import live.midreamsheep.jssc.lexer.lexers.WordHandler;
+import live.midreamsheep.jssc.lexer.lexers.word.StringHandler;
+import live.midreamsheep.jssc.lexer.lexers.word.WordHandler;
 
 public class LexerHandOut {
     static NumberHandler numberHandler = new NumberHandler();
@@ -11,7 +12,9 @@ public class LexerHandOut {
     static OperatorHandler operatorHandler = new OperatorHandler();
 
     static SpecialHandler specialHandler = new SpecialHandler();
-    public static LexerHandlerInter getHandler(byte content){
+    static StringHandler stringHandler = new StringHandler();
+    public static LexerHandlerInter getHandler(byte[] data, int pointer) {
+        int content = data[pointer];
         if(content>='0'&&content<='9'){
             return numberHandler;
         }
@@ -19,12 +22,12 @@ public class LexerHandOut {
             return wordhandler;
         }
         //运算符
-        if(content=='+'||content=='-'||content=='*'||content=='%'||content=='='||content=='>'||content=='<'||content=='!'){
+        if(content=='+'||content=='-'||content=='*'||content=='%'||content=='='||content=='>'||content=='<'||content=='!'||(content=='/'&&!(data[pointer+1]=='/'||data[pointer+1]=='*'))){
             return operatorHandler;
         }
         //字符串
         if(content=='"'){
-            return specialHandler;
+            return stringHandler;
         }
         return specialHandler;
     }

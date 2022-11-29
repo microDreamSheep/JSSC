@@ -6,8 +6,11 @@ import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
 import java.util.List;
 
+/**
+ * @author midreamsheep
+ * 数字处理器
+ * */
 public class NumberHandler implements LexerHandlerInter {
-
 
     @Override
     public int handle(byte[] bytes, int pointer, List<Token> takenList) {
