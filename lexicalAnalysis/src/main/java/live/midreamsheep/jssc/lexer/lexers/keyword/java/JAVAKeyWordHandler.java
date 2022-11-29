@@ -1,4 +1,4 @@
-package live.midreamsheep.jssc.lexer.lexers.keyword;
+package live.midreamsheep.jssc.lexer.lexers.keyword.java;
 
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
 import live.midreamsheep.jssc.pojo.token.Token;
