@@ -1,8 +1,8 @@
-package live.midreamsheep.jssc.lexer.lexers;
+package live.midreamsheep.jssc.lexer.lexers.number;
 
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
 import live.midreamsheep.jssc.pojo.token.Token;
-import live.midreamsheep.jssc.pojo.token.TokenType;
+import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class NumberHandler implements LexerHandlerInter {
             sb.append((char) bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Token(TokenType.NUMBER, sb.toString(),0));
+        takenList.add(new Token(TokenTypeEnum.NUMBER, sb.toString(),0));
         return pointer;
     }
 }

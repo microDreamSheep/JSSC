@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Token {
-    TokenType tokenType;
+    TokenTypeEnum tokenType;
     String value;
     int type;
 }

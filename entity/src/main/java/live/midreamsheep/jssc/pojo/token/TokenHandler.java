@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public final class TokenHandler {
     private final List<Token> tokens = new LinkedList<>();
+
     private File filePath;
 
     public void addToken(Token taken) {

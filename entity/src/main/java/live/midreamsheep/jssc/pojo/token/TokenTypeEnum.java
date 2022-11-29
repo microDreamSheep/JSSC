@@ -1,6 +1,6 @@
 package live.midreamsheep.jssc.pojo.token;
 
-public enum TokenType {
+public enum TokenTypeEnum {
     //数字
     NUMBER,
     //java 关键字
@@ -13,10 +13,12 @@ public enum TokenType {
     OPERATOR,
     //界符 ;
     DELIMITER,
-    //左右括号()与左右{}与左右[]
+    //左右括号()与左右{}与左右[] 界符
     BRACKET,
-    //特殊符号 , . 。等
+    //特殊符号 ,。等
     SPECIAL_SYMBOL,
+    //引用符 .
+    QUOTATION_MARK,
     //空白
     BLANK,
     //注释

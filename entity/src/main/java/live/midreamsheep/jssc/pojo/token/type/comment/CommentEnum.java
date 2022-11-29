@@ -1,17 +1,17 @@
-package live.midreamsheep.jssc.pojo.token.type;
+package live.midreamsheep.jssc.pojo.token.type.comment;
 
 /**
  * 注释类型
  * @author midreamsheep
  * @date 2020/10/26
  * */
-public enum Comment {
+public enum CommentEnum {
     SINGLE_LINE(0),
     MULTI_OR_DOC_LINE(1);
 
     private int type;
 
-    Comment(int i){
+    CommentEnum(int i){
         this.type = i;
     }
 

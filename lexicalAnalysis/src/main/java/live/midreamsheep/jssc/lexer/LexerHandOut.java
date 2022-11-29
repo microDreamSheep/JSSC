@@ -1,13 +1,13 @@
 package live.midreamsheep.jssc.lexer;
 
-import live.midreamsheep.jssc.lexer.lexers.NumberHandler;
-import live.midreamsheep.jssc.lexer.lexers.OperatorHandler;
+import live.midreamsheep.jssc.lexer.lexers.number.NumberHandler;
+import live.midreamsheep.jssc.lexer.lexers.oprator.OperatorHandler;
 import live.midreamsheep.jssc.lexer.lexers.special.SpecialHandler;
-import live.midreamsheep.jssc.lexer.lexers.Wordhandler;
+import live.midreamsheep.jssc.lexer.lexers.WordHandler;
 
 public class LexerHandOut {
     static NumberHandler numberHandler = new NumberHandler();
-    static Wordhandler wordhandler = new Wordhandler();
+    static WordHandler wordhandler = new WordHandler();
     static OperatorHandler operatorHandler = new OperatorHandler();
 
     static SpecialHandler specialHandler = new SpecialHandler();

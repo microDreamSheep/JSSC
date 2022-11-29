@@ -1,8 +1,8 @@
 package live.midreamsheep.jssc.lexer.lexers.special;
 
 import live.midreamsheep.jssc.pojo.token.Token;
-import live.midreamsheep.jssc.pojo.token.TokenType;
-import live.midreamsheep.jssc.pojo.token.type.Comment;
+import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
+import live.midreamsheep.jssc.pojo.token.type.comment.CommentEnum;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class CommentParse {
         }
         pointer+=2;
         sb.append("*/");
-        takenList.add(new Token(TokenType.COMMENT,sb.toString(), Comment.MULTI_OR_DOC_LINE.getType()));
+        takenList.add(new Token(TokenTypeEnum.COMMENT,sb.toString(), CommentEnum.MULTI_OR_DOC_LINE.getType()));
         return pointer;
     }
 
@@ -39,7 +39,7 @@ public class CommentParse {
             sb.append((char)bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Token(TokenType.COMMENT,sb.toString(),Comment.MULTI_OR_DOC_LINE.getType()));
+        takenList.add(new Token(TokenTypeEnum.COMMENT,sb.toString(), CommentEnum.MULTI_OR_DOC_LINE.getType()));
         return pointer;
     }
 }

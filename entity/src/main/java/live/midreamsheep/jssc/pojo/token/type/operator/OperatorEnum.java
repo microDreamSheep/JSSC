@@ -1,4 +1,4 @@
-package live.midreamsheep.jssc.pojo.token.type.Operator;
+package live.midreamsheep.jssc.pojo.token.type.operator;
 
 public enum OperatorEnum {
     //加

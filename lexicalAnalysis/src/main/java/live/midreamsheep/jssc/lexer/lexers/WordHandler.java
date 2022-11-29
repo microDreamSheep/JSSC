@@ -2,11 +2,11 @@ package live.midreamsheep.jssc.lexer.lexers;
 
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
 import live.midreamsheep.jssc.pojo.token.Token;
-import live.midreamsheep.jssc.pojo.token.TokenType;
+import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
 import java.util.List;
 
-public class Wordhandler implements LexerHandlerInter {
+public class WordHandler implements LexerHandlerInter {
     @Override
     public int handle(byte[] bytes, int pointer, List<Token> takenList) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -14,7 +14,7 @@ public class Wordhandler implements LexerHandlerInter {
             stringBuilder.append((char) bytes[pointer]);
             pointer++;
         }
-        takenList.add(new Token(TokenType.IDENTIFIER, stringBuilder.toString(), 0));
+        takenList.add(new Token(TokenTypeEnum.IDENTIFIER, stringBuilder.toString(), 0));
         return pointer;
     }
 }

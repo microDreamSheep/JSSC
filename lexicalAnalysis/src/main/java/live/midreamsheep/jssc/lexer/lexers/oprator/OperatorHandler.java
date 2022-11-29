@@ -1,9 +1,7 @@
-package live.midreamsheep.jssc.lexer.lexers;
+package live.midreamsheep.jssc.lexer.lexers.oprator;
 
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
 import live.midreamsheep.jssc.pojo.token.Token;
-import live.midreamsheep.jssc.pojo.token.TokenHandler;
-import live.midreamsheep.jssc.pojo.token.type.Operator.OperatorMapper;
 
 import java.util.List;
 
