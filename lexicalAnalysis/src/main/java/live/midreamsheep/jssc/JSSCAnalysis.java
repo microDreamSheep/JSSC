@@ -3,7 +3,6 @@ package live.midreamsheep.jssc;
 import live.midreamsheep.jssc.io.SIO;
 import live.midreamsheep.jssc.lexer.LexerHandOut;
 import live.midreamsheep.jssc.pojo.token.Token;
-import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
 import java.io.File;
 import java.util.LinkedList;
