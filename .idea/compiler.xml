@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="grammatical" />
         <module name="starter" />
-        <module name="entity" />
-        <module name="functionClasses" />
+        <module name="loader" />
         <module name="lexicalAnalysis" />
         <module name="outputfile" />
+        <module name="grammatical" />
+        <module name="entity" />
+        <module name="functionClasses" />
       </profile>
     </annotationProcessing>
   </component>

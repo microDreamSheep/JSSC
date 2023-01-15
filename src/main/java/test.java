@@ -9,9 +9,12 @@ public class test {
      **/
     public static void main(String[] args){
         System.out.print("test");
-        /*sa
-        * awdwa
-        * asdasd*/
+        String s = new String();
+        s{
+            sda = asd;
+            asda = asd;
+            asd = asdas;
+        }
         System.out.println();
         int i = 3/5;
         String a = "asdasd";
