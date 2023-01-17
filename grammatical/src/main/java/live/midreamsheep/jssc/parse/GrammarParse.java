@@ -31,6 +31,7 @@ public class GrammarParse {
                 continue;
             }
             String total = token.getValue();
+            System.out.println(total);
             String name = total.substring(0, total.indexOf("!#"));
             //源宏加载
             HandlerInter inter = Handler.HANDLER_MAP.get("live.midreamsheep.jssc.meta").get(name);

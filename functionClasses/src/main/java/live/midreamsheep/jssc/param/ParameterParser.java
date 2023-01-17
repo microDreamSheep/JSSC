@@ -8,10 +8,15 @@ import java.util.List;
 
 public class ParameterParser {
     public static JssValue[] StandardParser(String arg) {
+        System.out.println(arg);
         char[] chars = arg.toCharArray();
         List<JssValue> jssValues = new LinkedList<>();
         int pointer = 0;
         while (pointer<chars.length){
+            if(chars[pointer]==' '||chars[pointer]=='\t'||chars[pointer]=='\r'||chars[pointer]=='\n'){
+                pointer++;
+                continue;
+            }
             if(chars[pointer]=='#'){
                 pointer++;
                 StringBuilder stringBuilder = new StringBuilder();
@@ -19,10 +24,11 @@ public class ParameterParser {
                     stringBuilder.append(chars[pointer]);
                     pointer++;
                 }
-                jssValues.add(new JssValue(JssValueEnum.CODE,stringBuilder.toString()));
+                jssValues.add(new JssValue(JssValueEnum.CODE,stringBuilder.substring(1)));
                 while (pointer<chars.length&&chars[pointer]!=','){
                     pointer++;
                 }
+                pointer++;
                 continue;
             }
             StringBuilder stringBuilder = new StringBuilder();

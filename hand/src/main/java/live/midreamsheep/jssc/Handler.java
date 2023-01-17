@@ -1,6 +1,8 @@
 package live.midreamsheep.jssc;
 
 import live.midreamsheep.jssc.jss.meta.USE;
+import live.midreamsheep.jssc.param.ParameterParser;
+import live.midreamsheep.jssc.pojo.param.JssValue;
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
@@ -21,6 +23,7 @@ public class Handler {
         TestFunction.put("print",(arg)->{
             ArrayList<Token> objects = new ArrayList<>();
             objects.add(new Token(TokenTypeEnum.JSSC,"System.out.print("+arg+");",0));
+            JssValue[] jssValues = ParameterParser.StandardParser(arg);
             return objects;
         });
         HANDLER_MAP.put("test",TestFunction);

@@ -22,10 +22,10 @@ public class WordHandler implements LexerHandlerInter {
         i=pointer;
         if(bytes[pointer]=='!'&&bytes[pointer+1]=='#'){
             pointer+=2;
-            while (bytes[pointer]!='#'){
+            while (bytes[pointer]!=')'||bytes[pointer+1]!='#'){
                 pointer++;
             }
-            pointer++;
+            pointer+=2;
             stringBuilder.append(new String(bytes, i, pointer - i));
             takenList.add(new Token(TokenTypeEnum.JSSC, stringBuilder.toString(), 0));
             return pointer;
