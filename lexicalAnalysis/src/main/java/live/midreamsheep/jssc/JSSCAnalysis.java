@@ -18,7 +18,7 @@ public class JSSCAnalysis {
      * @param file 文件
      * @return 词素列表
      * */
-    public static List<Token> analyzeAJavaFile(File file) {
+    public static List<Token> analyzeAFile(File file) {
         List<Token> takenList = new LinkedList<>();
         byte[] bytes = SIO.readAFile(file).getBytes();
         for(int i = 0;i<bytes.length;){

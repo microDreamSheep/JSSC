@@ -16,6 +16,7 @@
         <module>starter</module>
         <module>functionClasses</module>
         <module>loader</module>
+        <module>hand</module>
     </modules>
 
     <properties>

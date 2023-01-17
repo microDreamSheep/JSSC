@@ -7,10 +7,8 @@ package live.midreamsheep.jssc.pojo.token;
 public enum TokenTypeEnum {
     //数字
     NUMBER,
-    //java 关键字
-    KEYWORD,
     //jssc标识符
-    JSSC_KEYWORD,
+    JSSC,
     //标识符
     IDENTIFIER,
     //运算符

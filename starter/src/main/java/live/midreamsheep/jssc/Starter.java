@@ -20,10 +20,9 @@ public class Starter {
         }
         //加载器
         Map<String, String[]> loaderMap = new HashMap<>();
-        loaderMap.put("jars", new String[]{System.getProperty("user.dir") + "jars"});
+        loaderMap.put("jars", new String[]{System.getProperty("user.dir") + File.separator+"jars"});
+        loaderMap.put("jssc", new String[]{System.getProperty("user.dir") + File.separator+"jssc"});
         LoaderStarter.loadStart(loaderMap);
-        System.out.println(args[0]+"开始处理");
         new LexerAnalyzer().analyze(file);
-        System.out.println("所有文件都已经处理完成");
     }
 }

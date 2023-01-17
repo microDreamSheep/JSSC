@@ -1,13 +1,10 @@
 package live.midreamsheep.jssc.lexer.lexers.word;
 
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
-import live.midreamsheep.jssc.lexer.lexers.word.keyword.jssc.JSSCKeyWordMapper;
-import live.midreamsheep.jssc.lexer.lexers.word.keyword.jv.JAVAKeyWordMapper;
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
 import java.util.List;
-
 /**
  * @author midreamsheep
  * 关键字处理器
@@ -21,14 +18,19 @@ public class WordHandler implements LexerHandlerInter {
             pointer++;
         }
         stringBuilder.append(new String(bytes, i, pointer - i));
-        //判断是否java关键字
-        if (JAVAKeyWordMapper.KEY_WORD_MAP.containsKey(stringBuilder.toString())) {
-            takenList.add(new Token(TokenTypeEnum.KEYWORD, stringBuilder.toString(), JAVAKeyWordMapper.KEY_WORD_MAP.get(stringBuilder.toString()).getId()));
-        } else if (JSSCKeyWordMapper.KEY_WORD_MAP.containsKey(stringBuilder.toString())) {
-            takenList.add(new Token(TokenTypeEnum.JSSC_KEYWORD, stringBuilder.toString(), JSSCKeyWordMapper.KEY_WORD_MAP.get(stringBuilder.toString()).getId()));
-        } else {
-            takenList.add(new Token(TokenTypeEnum.IDENTIFIER, stringBuilder.toString(), 0));
+
+        i=pointer;
+        if(bytes[pointer]=='!'&&bytes[pointer+1]=='#'){
+            pointer+=2;
+            while (bytes[pointer]!='#'){
+                pointer++;
+            }
+            pointer++;
+            stringBuilder.append(new String(bytes, i, pointer - i));
+            takenList.add(new Token(TokenTypeEnum.JSSC, stringBuilder.toString(), 0));
+            return pointer;
         }
+        takenList.add(new Token(TokenTypeEnum.IDENTIFIER, stringBuilder.toString(), 0));
         return pointer;
     }
 }

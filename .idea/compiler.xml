@@ -13,6 +13,7 @@
         <module name="grammatical" />
         <module name="entity" />
         <module name="functionClasses" />
+        <module name="hand" />
       </profile>
     </annotationProcessing>
   </component>

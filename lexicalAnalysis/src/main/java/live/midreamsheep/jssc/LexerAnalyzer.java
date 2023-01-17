@@ -1,5 +1,6 @@
 package live.midreamsheep.jssc;
 
+import live.midreamsheep.jssc.parse.GrammarParse;
 import live.midreamsheep.jssc.staticdata.FileMetaData;
 
 import java.io.File;
@@ -20,7 +21,7 @@ public class LexerAnalyzer {
         //扫描根目录
         nowDictionary = FileMetaData.rootFile = dictionary;
         //输出目录
-        FileMetaData.outPutFile = new File(dictionary.getAbsolutePath()+File.separator+"../" + File.separator + "outPut");
+        FileMetaData.setOutPutFile(new File(dictionary.getAbsolutePath()+File.separator+"../" + File.separator + "outPut"));
         //递归调用分析器寻找.java文件
         findJavaFile(dictionary);
     }
@@ -40,6 +41,6 @@ public class LexerAnalyzer {
             return;
         }
         //找到.java文件后，调用分析器进行分析
-        GrammarParse.ParseAndOut(JSSCAnalysis.analyzeAJavaFile(file), nowDictionary,file);
+        GrammarParse.ParseAndOut(JSSCAnalysis.analyzeAFile(file), nowDictionary,file);
     }
 }

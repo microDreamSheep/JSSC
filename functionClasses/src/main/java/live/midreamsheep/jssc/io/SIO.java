@@ -3,6 +3,7 @@ package live.midreamsheep.jssc.io;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 
 /**
  * @author midreamsheep
@@ -26,5 +27,9 @@ public class SIO {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public static boolean FileOut(String content, File outFile) throws IOException {
+        Files.write(outFile.toPath(), content.getBytes());
+        return true;
     }
 }

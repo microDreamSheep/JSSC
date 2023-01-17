@@ -10,7 +10,6 @@ public class LexerHandOut {
     static NumberHandler numberHandler = new NumberHandler();
     static WordHandler wordhandler = new WordHandler();
     static OperatorHandler operatorHandler = new OperatorHandler();
-
     static SpecialHandler specialHandler = new SpecialHandler();
     static StringHandler stringHandler = new StringHandler();
     public static LexerHandlerInter getHandler(byte[] data, int pointer) {

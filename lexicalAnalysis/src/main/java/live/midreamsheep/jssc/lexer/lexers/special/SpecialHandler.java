@@ -22,11 +22,11 @@ public class SpecialHandler implements LexerHandlerInter {
         }
         //处理JSSC关键字符
         if(currentChar == '#'){
-            takenList.add(new Token(TokenTypeEnum.JSSC_KEYWORD,"#%",0));
+            takenList.add(new Token(TokenTypeEnum.JSSC,"#%",0));
             pointer++;
             return ++pointer;
         } else if (currentChar == '%') {
-            takenList.add(new Token(TokenTypeEnum.JSSC_KEYWORD,"#%",1));
+            takenList.add(new Token(TokenTypeEnum.JSSC,"#%",1));
             pointer++;
             return ++pointer;
         }

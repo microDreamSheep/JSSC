@@ -1,4 +1,4 @@
-package live.midreamsheep.jssc.loader.loaders;
+package live.midreamsheep.jssc.loader.loaders.jar;
 
 import live.midreamsheep.jssc.loader.LoaderInter;
 
@@ -14,7 +14,7 @@ public class JarsLoader implements LoaderInter {
         for (String dir : dirs) {
             loadDir(dir);
         }
-        return false;
+        return true;
     }
 
     private void loadDir(String dir) {
