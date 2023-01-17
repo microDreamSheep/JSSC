@@ -24,6 +24,9 @@ public class Handler {
             ArrayList<Token> objects = new ArrayList<>();
             objects.add(new Token(TokenTypeEnum.JSSC,"System.out.print("+arg+");",0));
             JssValue[] jssValues = ParameterParser.StandardParser(arg);
+            for (JssValue jssValue : jssValues) {
+                System.out.println(jssValue.getValue());
+            }
             return objects;
         });
         HANDLER_MAP.put("test",TestFunction);

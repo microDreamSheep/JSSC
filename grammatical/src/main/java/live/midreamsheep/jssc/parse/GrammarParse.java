@@ -23,6 +23,7 @@ public class GrammarParse {
      * @param tokenList 词法分析的token组
      * */
     public static void ParseAndOut(List<Token> tokenList,File toFile){
+        System.out.println("语法分析开始");
         Handler.currentMap.clear();
         Map<Token,List<Token>> replaceMap = new HashMap<>();
         List<Token> removeList = new LinkedList<>();
@@ -31,7 +32,6 @@ public class GrammarParse {
                 continue;
             }
             String total = token.getValue();
-            System.out.println(total);
             String name = total.substring(0, total.indexOf("!#"));
             //源宏加载
             HandlerInter inter = Handler.HANDLER_MAP.get("live.midreamsheep.jssc.meta").get(name);

@@ -1,4 +1,4 @@
-use!#(test)#
+use!#(live.midreamsheep.sugar)#
 //asdasdasda
 /*sadasdas
 * asdas*/
@@ -10,12 +10,16 @@ public class test {
     public static void main(String[] args){
         System.out.print("test");
         String s = new String();
-        print!#("hello word")#
         System.out.println();
         int i = 3/5;
         String a = "asdasd";
+        suchAs pojo = new suchAs();
+        setter!#(pojo,
+                ({
+                        key = 3
+                        value = "这是一个示例"
+                }))#
         if (i>=5){
-            print!#(a)#
             return;//的撒大苏打
         }
     }
