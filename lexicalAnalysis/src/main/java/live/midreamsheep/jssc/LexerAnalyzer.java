@@ -41,6 +41,6 @@ public class LexerAnalyzer {
             return;
         }
         //找到.java文件后，调用分析器进行分析
-        GrammarParse.ParseAndOut(JSSCAnalysis.analyzeAFile(file), nowDictionary,file);
+        GrammarParse.ParseAndOut(JSSCAnalysis.analyzeAFile(file),file);
     }
 }

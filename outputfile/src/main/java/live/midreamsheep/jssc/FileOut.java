@@ -8,9 +8,12 @@ import java.io.IOException;
 import java.util.List;
 
 public class FileOut {
-    public static void FileOut(List<Token> tokens, File outFile) {
+    public static void outFile(List<Token> tokens, File outFile) {
         if(!outFile.getParentFile().exists()){
-            outFile.getParentFile().mkdirs();
+            boolean mkdirs = outFile.getParentFile().mkdirs();
+            if(!mkdirs){
+                throw new RuntimeException("mkdirs error"+outFile.getParentFile().getAbsolutePath());
+            }
         }
         StringBuilder stringBuilder = new StringBuilder();
         for (Token token : tokens) {

@@ -22,7 +22,7 @@ public class GrammarParse {
      * 语法分析并输出
      * @param tokenList 词法分析的token组
      * */
-    public static void ParseAndOut(List<Token> tokenList, File nowDictionary,File toFile){
+    public static void ParseAndOut(List<Token> tokenList,File toFile){
         Handler.currentMap.clear();
         Map<Token,List<Token>> replaceMap = new HashMap<>();
         List<Token> removeList = new LinkedList<>();
@@ -55,6 +55,6 @@ public class GrammarParse {
             tokenList.addAll(pointer,tokens);
         });
         //输出
-        FileOut.FileOut(tokenList,new File(FileMetaData.outPutFile.getAbsolutePath()+ toFile.getAbsolutePath().replace(FileMetaData.rootFile.getAbsolutePath(),"")));
+        FileOut.outFile(tokenList,new File(FileMetaData.outPutFile.getAbsolutePath()+ toFile.getAbsolutePath().replace(FileMetaData.rootFile.getAbsolutePath(),"")));
     }
 }
