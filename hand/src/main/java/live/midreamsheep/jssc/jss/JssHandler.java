@@ -7,7 +7,7 @@ import java.util.List;
 public class JssHandler extends JssHandlerAbstract{
 
     @Override
-    public List<Token> handle(String arg) {
+    public List<Token> handle(String arg, List<Token> tokens, int currentPointer) {
         return null;
     }
 }

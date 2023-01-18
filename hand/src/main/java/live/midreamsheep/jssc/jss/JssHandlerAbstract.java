@@ -14,5 +14,5 @@ public abstract class JssHandlerAbstract implements HandlerInter {
     }
 
     @Override
-    public abstract List<Token> handle(String arg);
+    public abstract List<Token> handle(String arg, List<Token> tokens, int currentPointer);
 }

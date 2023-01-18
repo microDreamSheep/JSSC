@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class USE extends JssHandlerAbstract {
     @Override
-    public List<Token> handle(String arg) {
+    public List<Token> handle(String arg, List<Token> tokens, int currentPointer) {
         String[] split = arg.split(",");
         for (String s : split) {
             Map<String, HandlerInter> map = Handler.HANDLER_MAP.get(s.trim());

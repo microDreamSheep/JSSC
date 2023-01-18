@@ -9,8 +9,8 @@ import java.util.List;
 
 public abstract class JarHandlerAbstract implements HandlerInter {
     @Override
-    public List<Token> handle(String arg) {
-        return handle(ParameterParser.StandardParser(arg));
+    public List<Token> handle(String arg, List<Token> tokens, int currentPointer) {
+        return handle(ParameterParser.StandardParser(arg),tokens,currentPointer);
     }
-    protected abstract List<Token> handle(JssValue[] args);
+    protected abstract List<Token> handle(JssValue[] args, List<Token> tokens, int currentPointer);
 }

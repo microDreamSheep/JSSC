@@ -1,12 +1,7 @@
 package live.midreamsheep.jssc;
 
 import live.midreamsheep.jssc.jss.meta.USE;
-import live.midreamsheep.jssc.param.ParameterParser;
-import live.midreamsheep.jssc.pojo.param.JssValue;
-import live.midreamsheep.jssc.pojo.token.Token;
-import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,17 +13,5 @@ public class Handler {
         HashMap<String,HandlerInter> metaFunction = new HashMap<>();
         metaFunction.put("use",new USE());
         HANDLER_MAP.put("live.midreamsheep.jssc.meta",metaFunction);
-        HashMap<String,HandlerInter> TestFunction = new HashMap<>();
-
-        TestFunction.put("print",(arg)->{
-            ArrayList<Token> objects = new ArrayList<>();
-            objects.add(new Token(TokenTypeEnum.JSSC,"System.out.print("+arg+");",0));
-            JssValue[] jssValues = ParameterParser.StandardParser(arg);
-            for (JssValue jssValue : jssValues) {
-                System.out.println(jssValue.getValue());
-            }
-            return objects;
-        });
-        HANDLER_MAP.put("test",TestFunction);
     }
 }

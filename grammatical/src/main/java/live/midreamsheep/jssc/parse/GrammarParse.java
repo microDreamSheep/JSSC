@@ -23,7 +23,6 @@ public class GrammarParse {
      * @param tokenList 词法分析的token组
      * */
     public static void ParseAndOut(List<Token> tokenList,File toFile){
-        System.out.println("语法分析开始");
         Handler.currentMap.clear();
         Map<Token,List<Token>> replaceMap = new HashMap<>();
         List<Token> removeList = new LinkedList<>();
@@ -37,7 +36,7 @@ public class GrammarParse {
             HandlerInter inter = Handler.HANDLER_MAP.get("live.midreamsheep.jssc.meta").get(name);
             String args = total.substring(total.indexOf("#(") + 2, total.lastIndexOf(")#"));
             if(inter!=null){
-                inter.handle(args);
+                inter.handle(args,tokenList,tokenList.indexOf(token));
                 removeList.add(token);
                 continue;
             }
@@ -46,8 +45,7 @@ public class GrammarParse {
             if(inter==null){
                 throw new RuntimeException("not found "+name);
             }
-            List<Token> handle = inter.handle(args);
-            replaceMap.put(token,handle);
+            replaceMap.put(token,inter.handle(args,tokenList,tokenList.indexOf(token)));
         }
         removeList.forEach(tokenList::remove);
         replaceMap.forEach((token, tokens) -> {
