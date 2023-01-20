@@ -13,8 +13,7 @@ public class test {
         System.out.println();
         int i = 3/5;
         String a = "asdasd";
-        suchAs pojo = new suchAs();
-        setter!#(pojo,
+        setter!#(a,
                 ({
                         key = 3
                         value = "这是一个示例"

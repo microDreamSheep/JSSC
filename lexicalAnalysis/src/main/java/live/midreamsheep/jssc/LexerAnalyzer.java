@@ -15,15 +15,12 @@ public class LexerAnalyzer {
     private File nowDictionary;
     /**
      * 词法分析
-     * @param dictionary 项目根文件
      * */
-    public void analyze(File dictionary) {
+    public void analyze() {
         //扫描根目录
-        nowDictionary = FileMetaData.rootFile = dictionary;
-        //输出目录
-        FileMetaData.setOutPutFile(new File(dictionary.getAbsolutePath()+File.separator+"../" + File.separator + "outPut"));
+        nowDictionary = FileMetaData.rootFile;
         //递归调用分析器寻找.java文件
-        findJavaFile(dictionary);
+        findJavaFile(nowDictionary);
     }
     /**
      * 寻找.java文件并处理
