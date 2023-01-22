@@ -54,6 +54,6 @@ public class GrammarParse {
             tokenList.addAll(pointer,tokens);
         });
         //输出
-        FileOut.outFile(tokenList,new File(FileMetaData.outPutFile.getAbsolutePath()+ toFile.getAbsolutePath().replace(FileMetaData.rootFile.getAbsolutePath(),"")));
+        FileOut.outFile(tokenList,new File(FileMetaData.getOutPutFile().getAbsolutePath()+ toFile.getAbsolutePath().replace(FileMetaData.rootFile.getAbsolutePath(),"")));
     }
 }

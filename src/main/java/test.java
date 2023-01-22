@@ -13,11 +13,7 @@ public class test {
         System.out.println();
         int i = 3/5;
         String a = "asdasd";
-        setter!#(a,
-                ({
-                        key = 3
-                        value = "这是一个示例"
-                }))#
+        print!#(a)#
         if (i>=5){
             return;//的撒大苏打
         }
