@@ -1,15 +1,20 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="jssc:jar">
+  <artifact name="jssc:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/jssc_jar</output-path>
-    <root id="archive" name="jssc.jar">
-      <element id="module-output" name="grammatical" />
-      <element id="module-output" name="entity" />
-      <element id="module-output" name="hand" />
-      <element id="module-output" name="functionClasses" />
-      <element id="module-output" name="outputfile" />
-      <element id="module-output" name="starter" />
-      <element id="module-output" name="lexicalAnalysis" />
-      <element id="module-output" name="loader" />
+    <root id="root">
+      <element id="archive" name="jssc.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="grammatical" />
+        <element id="module-output" name="entity" />
+        <element id="module-output" name="hand" />
+        <element id="module-output" name="functionClasses" />
+        <element id="module-output" name="outputfile" />
+        <element id="module-output" name="starter" />
+        <element id="module-output" name="lexicalAnalysis" />
+        <element id="module-output" name="loader" />
+      </element>
     </root>
   </artifact>
 </component>

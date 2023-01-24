@@ -15,5 +15,11 @@ public class ParamMapper {
     static{
         map.put("root", s -> FileMetaData.setRootFile(new File(s)));
         map.put("out", s -> FileMetaData.setOutPutFile(new File(s)));
+        map.put("jssc", s -> {
+            FileMetaData.jsscPaths.add(s);
+        });
+        map.put("jar", s -> {
+            FileMetaData.jarPaths.add(s);
+        });
     }
 }

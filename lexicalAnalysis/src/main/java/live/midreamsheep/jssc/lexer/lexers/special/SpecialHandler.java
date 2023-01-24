@@ -20,16 +20,6 @@ public class SpecialHandler implements LexerHandlerInter {
             pointer = CommentParse.parse(bytes,pointer,takenList);
             return ++pointer;
         }
-        //处理JSSC关键字符
-        if(currentChar == '#'){
-            takenList.add(new Token(TokenTypeEnum.JSSC,"#%",0));
-            pointer++;
-            return ++pointer;
-        } else if (currentChar == '%') {
-            takenList.add(new Token(TokenTypeEnum.JSSC,"#%",1));
-            pointer++;
-            return ++pointer;
-        }
         //制表符
         if (ConstantMapper.BLANK.contains(currentChar)) {
             return parseBlank(bytes, pointer, takenList);

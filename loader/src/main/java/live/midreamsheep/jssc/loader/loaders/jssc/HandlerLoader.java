@@ -34,9 +34,7 @@ public class HandlerLoader implements LoaderInter {
         File[] files = file.listFiles();
         for (File second : files != null ? files : new File[0]) {
             if (!second.isDirectory()) {
-                if (second.getName().endsWith(".jssc")) {
-                    JssGrammar.parse(JSSCAnalysis.analyzeAFile(second).toArray(new Token[0]));
-                }else if (second.getName().endsWith(".jss")) {
+                if (second.getName().endsWith(".jss")) {
                     String s = SIO.readAFile(second);
                     for (String s1 : s.split("\n")) {
                         loadJar(s1.split("="),file);

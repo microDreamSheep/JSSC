@@ -33,29 +33,11 @@ public class FileMetaData {
     public static File getOutPutFile() {
         if(!outPutFile.getParentFile().exists()){
             outPutFile.getParentFile().mkdirs();
-        }else{
-            File[] files = outPutFile.listFiles();
-            if(files!=null){
-                for (File file : files) {
-                    delete(file);
-                }
-            }
         }
         return outPutFile;
     }
     public static void setOutPutFile(File outPutFile) {
         FileMetaData.outPutFile = outPutFile;
     }
-    private static void delete(File file){
-        if(file.isDirectory()){
-            File[] files = file.listFiles();
-            for (File f : files==null?new File[0]:files) {
-                delete(f);
-            }
-        }
-        if(!file.delete()){
-            throw new RuntimeException("删除文件失败");
-        }
 
-    }
 }

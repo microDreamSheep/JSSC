@@ -1,8 +1,6 @@
 package live.midreamsheep.jssc.io;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 
 /**
@@ -28,8 +26,12 @@ public class SIO {
             throw new RuntimeException(e);
         }
     }
-    public static boolean FileOut(String content, File outFile) throws IOException {
-        Files.write(outFile.toPath(), content.getBytes());
-        return true;
+    public static void FileOut(String content, File outFile) throws IOException {
+        System.out.println("输出到"+outFile.getAbsolutePath());
+        System.out.println(content.length());
+        OutputStream os = Files.newOutputStream(outFile.toPath());
+        os.write(content.getBytes());
+        os.flush();
+        os.close();
     }
 }

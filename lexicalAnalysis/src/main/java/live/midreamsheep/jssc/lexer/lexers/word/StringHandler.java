@@ -17,11 +17,17 @@ public class StringHandler implements LexerHandlerInter {
         stringBuilder.append((char) bytes[pointer]);
         pointer++;
         int i = pointer;
-        while (pointer < bytes.length && bytes[pointer] != '"') {
+        while (pointer < bytes.length && (bytes[pointer]!='\"'&&(bytes[pointer] == '"'&&bytes[pointer-1]=='\\'))) {
             pointer++;
         }
         stringBuilder.append(new String(bytes, i, pointer - i));
-        stringBuilder.append((char) bytes[pointer]);
+        try {
+            stringBuilder.append((char) bytes[pointer]);
+        }catch (Exception e){
+            System.out.println(takenList);
+            throw new RuntimeException("字符串未闭合");
+        }
+
         takenList.add(new Token(TokenTypeEnum.String, stringBuilder.toString(), 0));
         pointer++;
         return pointer;
