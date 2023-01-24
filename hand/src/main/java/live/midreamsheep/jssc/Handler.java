@@ -1,6 +1,7 @@
 package live.midreamsheep.jssc;
 
 import live.midreamsheep.jssc.jss.meta.USE;
+import live.midreamsheep.jssc.param.ParameterParser;
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
@@ -18,7 +19,10 @@ public class Handler {
         HANDLER_MAP.put("live.midreamsheep.jssc.meta",metaFunction);
 
         Map<String,HandlerInter> testFunction = new HashMap<>();
-        testFunction.put("print",((arg, tokens, currentPointer) -> Collections.singletonList(new Token(TokenTypeEnum.JSSC, "System.out.print(" + arg + ");", 0))));
+        testFunction.put("print",((arg, tokens, currentPointer) -> {
+            ParameterParser.StandardParser(arg);
+            return Collections.singletonList(new Token(TokenTypeEnum.JSSC, "System.out.print(" + arg + ");", 0));
+        }));
         HANDLER_MAP.put("live.midreamsheep.sugar",testFunction);
     }
 }

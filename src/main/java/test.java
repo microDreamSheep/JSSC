@@ -13,7 +13,7 @@ public class test {
         System.out.println();
         int i = 3/5;
         String a = "asdasd";
-        print<!a!>
+        print<!a,({asdasd}),({44878484})!>
         if (i>=5){
             return;//的撒大苏打
         }
