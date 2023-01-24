@@ -1,5 +1,6 @@
 package live.midreamsheep.jssc.lexer.lexers.word;
 
+import live.midreamsheep.jssc.constant.ConstantChar;
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
@@ -20,9 +21,9 @@ public class WordHandler implements LexerHandlerInter {
         stringBuilder.append(new String(bytes, i, pointer - i));
 
         i=pointer;
-        if(bytes[pointer]=='!'&&bytes[pointer+1]=='#'){
+        if(bytes[pointer]== ConstantChar.JSSC_START_ONE &&bytes[pointer+1]==ConstantChar.JSSC_START_TWO){
             pointer+=2;
-            while (bytes[pointer]!=')'||bytes[pointer+1]!='#'){
+            while (bytes[pointer]!=ConstantChar.JSSC_END_ONE||bytes[pointer+1]!=ConstantChar.JSSC_END_TWO){
                 pointer++;
             }
             pointer+=2;

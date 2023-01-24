@@ -3,6 +3,7 @@ package live.midreamsheep.jssc.parse;
 import live.midreamsheep.jssc.FileOut;
 import live.midreamsheep.jssc.Handler;
 import live.midreamsheep.jssc.HandlerInter;
+import live.midreamsheep.jssc.constant.ConstantChar;
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 import live.midreamsheep.jssc.staticdata.FileMetaData;
@@ -31,10 +32,10 @@ public class GrammarParse {
                 continue;
             }
             String total = token.getValue();
-            String name = total.substring(0, total.indexOf("!#"));
+            String name = total.substring(0, total.indexOf(ConstantChar.JSSC_START));
             //源宏加载
             HandlerInter inter = Handler.HANDLER_MAP.get("live.midreamsheep.jssc.meta").get(name);
-            String args = total.substring(total.indexOf("#(") + 2, total.lastIndexOf(")#"));
+            String args = total.substring(total.indexOf(ConstantChar.JSSC_START) + 2, total.lastIndexOf(ConstantChar.JSSC_END));
             if(inter!=null){
                 inter.handle(args,tokenList,tokenList.indexOf(token));
                 removeList.add(token);

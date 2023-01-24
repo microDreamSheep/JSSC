@@ -1,4 +1,4 @@
-use!#(live.midreamsheep.sugar)#
+use<!live.midreamsheep.sugar!>
 //asdasdasda
 /*sadasdas
 * asdas*/
@@ -13,7 +13,7 @@ public class test {
         System.out.println();
         int i = 3/5;
         String a = "asdasd";
-        print!#(a)#
+        print<!a!>
         if (i>=5){
             return;//的撒大苏打
         }

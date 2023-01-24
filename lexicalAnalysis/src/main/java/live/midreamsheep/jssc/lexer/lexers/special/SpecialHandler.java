@@ -1,7 +1,7 @@
 package live.midreamsheep.jssc.lexer.lexers.special;
 
+import live.midreamsheep.jssc.constant.ConstantMapper;
 import live.midreamsheep.jssc.lexer.LexerHandlerInter;
-import live.midreamsheep.jssc.lexer.lexers.special.bracket.BracketMapper;
 import live.midreamsheep.jssc.pojo.token.Token;
 import live.midreamsheep.jssc.pojo.token.TokenTypeEnum;
 
@@ -31,12 +31,12 @@ public class SpecialHandler implements LexerHandlerInter {
             return ++pointer;
         }
         //制表符
-        if (BlankMapper.blankMap.containsKey(""+currentChar)) {
+        if (ConstantMapper.BLANK.contains(currentChar)) {
             return parseBlank(bytes, pointer, takenList);
         }
         //处理界符
-        if (BracketMapper.bracketMap.containsKey(""+currentChar)) {
-            takenList.add(new Token(TokenTypeEnum.BRACKET,""+currentChar,BracketMapper.bracketMap.get(""+currentChar)));
+        if (ConstantMapper.bracketMap.containsKey(""+currentChar)) {
+            takenList.add(new Token(TokenTypeEnum.BRACKET,""+currentChar,ConstantMapper.bracketMap.get(""+currentChar)));
             return ++pointer;
         }
         //处理括号等
